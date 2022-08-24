@@ -1,0 +1,1770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>dMulti</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	background-color: rgb(0, 0, 0);
+}
+
+QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+QLineEdit {
+    color: rgb(255, 255, 255);
+    border-style: inset;
+    border-width: 1px;
+    border-radius: 6px;
+	border-color: rgb(207, 207, 207);
+    padding: 3px;
+	background-color: rgb(25, 25, 25);
+}
+
+QPushButton:enabled{
+	color: rgb(255, 255, 255);
+	background-color: rgba(85, 88, 93, 90);
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+	background-color: rgba(79, 186, 196, 150);
+}
+
+QPushButton:pressed {
+	background-color: rgb(56, 47, 165);
+}
+
+QPushButton:!enabled{
+    border: 2px solid;
+	border-color: rgba(143, 143, 145, 90);
+    border-radius: 6px;
+	color: rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    min-width: 80px;
+}
+
+QDoubleSpinBox{
+    color: rgb(255, 255, 255);
+	background-color: rgba(0, 0, 0, 0);
+}
+
+QDoubleSpinBox::up-button:pressed {
+	background-color: rgb(56, 47, 165);
+}
+
+QDoubleSpinBox::up-button {
+     width: 30px;
+     subcontrol-origin: center;
+     subcontrol-position: top right;
+}
+
+QDoubleSpinBox::down-button:pressed {
+	background-color: rgb(56, 47, 165);
+}
+
+QDoubleSpinBox::down-button {
+	width: 30px;
+     subcontrol-origin: center;
+     subcontrol-position: bottom right;
+}
+
+QDoubleSpinBox:!enabled{
+	background-color: rgba(0, 0, 0, 0);
+/*    border-style: inset;
+    border-width: 1px;
+    border-radius: 6px;
+    border-color: rgba(143, 143, 145, 90);
+    padding-right: 10px;*/
+}
+
+QComboBox::enabled {
+	color: rgb(0, 0, 0);
+	background-color: rgba(255, 255, 255, 150);
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    min-width: 80px;
+}
+
+QComboBox:!enabled{
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid;
+	border-color: rgba(143, 143, 145, 90);
+    border-radius: 6px;
+	color: rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    min-width: 80px;
+}
+
+QComboBox::drop-down {
+	 width: 21px;
+     subcontrol-origin: center;
+     subcontrol-position: bottom right;
+}
+
+QComboBox QAbstractItemView {
+	color: rgb(255, 255, 255);
+    border: 2px solid darkgray;
+	background-color: rgba(255, 255, 255, 150);
+}
+
+QComboBox:hover {
+	background-color: rgba(79, 186, 196, 150);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="rpcGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>500</y>
+      <width>681</width>
+      <height>157</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>681</width>
+      <height>157</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>830</width>
+      <height>157</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+	background-color: rgba(0, 0, 0, 120);
+}
+
+QGroupBox::title {
+	color: rgb(255, 255, 255);
+    subcontrol-origin: top;
+    subcontrol-position: top left; 
+    padding: 0 3px;
+    border: 2px solid gray;
+    border-bottom-right-radius: 6px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+    </property>
+    <property name="title">
+     <string>Connect</string>
+    </property>
+    <widget class="QPushButton" name="connectButton">
+     <property name="geometry">
+      <rect>
+       <x>586</x>
+       <y>120</y>
+       <width>84</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>84</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>84</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Connect</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="userpassInput">
+     <property name="geometry">
+      <rect>
+       <x>106</x>
+       <y>15</y>
+       <width>474</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>474</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>615</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="placeholderText">
+      <string>user:pass</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="daemonRPCinput">
+     <property name="geometry">
+      <rect>
+       <x>106</x>
+       <y>49</y>
+       <width>474</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>474</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>615</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Enter Daemon RPC Address</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="contractCheckBox">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>118</y>
+       <width>89</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>99</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Valid</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="walletConnectedBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>84</y>
+       <width>89</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>90</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Connected</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="contractLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>106</x>
+       <y>117</y>
+       <width>474</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>474</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>615</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Contract Address:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="walletRPCinput">
+     <property name="geometry">
+      <rect>
+       <x>106</x>
+       <y>83</y>
+       <width>474</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>474</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>615</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Enter Wallet RPC Address</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="daemonConnectedBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>50</y>
+       <width>89</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>90</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Connected</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>680</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane {
+  border: 1px solid lightgray;
+  background-color: rgba(85, 88, 93, 90);
+}
+
+QTabBar::tab {
+
+  color: white;
+ }
+
+QTabBar::tab {
+	background-color: rgba(85, 88, 93, 90);
+    min-width: 12ex;
+
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+  background-color: rgba(79, 186, 196, 150);
+}
+</string>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::South</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideNone</enum>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="contractTab">
+     <attribute name="title">
+      <string>Contract</string>
+     </attribute>
+     <widget class="QGroupBox" name="contractGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>655</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>830</width>
+        <height>999</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+	background-color: rgba(0, 0, 0, 120);
+}
+
+QGroupBox::title {
+	color: rgb(255, 255, 255);
+    subcontrol-origin: top;
+    subcontrol-position: top left; 
+    padding: 0 3px;
+    border: 2px solid gray;
+    border-bottom-right-radius: 6px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+      </property>
+      <property name="title">
+       <string>Contract Details</string>
+      </property>
+      <widget class="QTextBrowser" name="contractTextBrowser">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>635</width>
+         <height>370</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">    border-color: rgb(128, 128, 128);
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 6px;
+    padding: 3px;
+	background-color: rgb(25, 25, 25);
+    color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="fundsTab">
+     <attribute name="title">
+      <string>Funds</string>
+     </attribute>
+     <widget class="QGroupBox" name="assetGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>500</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>830</width>
+        <height>157</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+	background-color: rgba(0, 0, 0, 120);
+}
+
+QGroupBox::title {
+	color: rgb(255, 255, 255);
+    subcontrol-origin: top;
+    subcontrol-position: top left; 
+    padding: 0 3px;
+    border: 2px solid gray;
+    border-bottom-right-radius: 6px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+      </property>
+      <property name="title">
+       <string>Issue Asset</string>
+      </property>
+      <widget class="QLineEdit" name="assetReceiverLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>474</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>474</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>615</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Receiver:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="assetAmountSpinBox">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>90</y>
+         <width>280</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDoubleSpinBox:hover {
+	background-color: rgba(79, 186, 196, 30);
+}</string>
+       </property>
+       <property name="prefix">
+        <string>Amount: </string>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>100000000000000004188152556421145795899143386664033828314342771180699648.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="sendAssetButton">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>90</y>
+         <width>84</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>84</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>84</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Send Asset</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="assetCheckBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>81</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>99</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:hover{
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 158, 0, 120);
+}</string>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="assetIssuedDisplay">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>230</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton:hover {
+	background-color: rgba(0, 0, 0, 120);
+}</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="prefix">
+        <string>Issued: </string>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>1000000000000000013287555072.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="maxSupplyDisplay">
+       <property name="geometry">
+        <rect>
+         <x>244</x>
+         <y>30</y>
+         <width>240</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton:hover {
+	background-color: rgba(0, 0, 0, 120);
+}</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="prefix">
+        <string>Max Supply: </string>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>1000000000000000019884624838656.000000000000000</double>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="deroGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>164</y>
+        <width>500</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>830</width>
+        <height>157</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+	background-color: rgba(0, 0, 0, 120);
+}
+
+QGroupBox::title {
+	color: rgb(255, 255, 255);
+    subcontrol-origin: top;
+    subcontrol-position: top left; 
+    padding: 0 3px;
+    border: 2px solid gray;
+    border-bottom-right-radius: 6px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+      </property>
+      <property name="title">
+       <string>Send Dero</string>
+      </property>
+      <widget class="QLineEdit" name="deroReceiverLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>474</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>474</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>615</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Receiver:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="deroAmountSpinBox">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>90</y>
+         <width>280</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDoubleSpinBox:hover {
+	background-color: rgba(79, 186, 196, 30);
+}</string>
+       </property>
+       <property name="prefix">
+        <string>Amount: </string>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>21000000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="sendDeroButton">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>90</y>
+         <width>84</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>84</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>84</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Send Dero</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="deroCheckBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>81</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>99</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:hover{
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 158, 0, 120);
+}</string>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="deroDisplay">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>474</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="prefix">
+        <string>Dero in Contract: </string>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>21000000.000000000000000</double>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="depositGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>500</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>830</width>
+        <height>157</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+	background-color: rgba(0, 0, 0, 120);
+}
+
+QGroupBox::title {
+	color: rgb(255, 255, 255);
+    subcontrol-origin: top;
+    subcontrol-position: top left; 
+    padding: 0 3px;
+    border: 2px solid gray;
+    border-bottom-right-radius: 6px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+      </property>
+      <property name="title">
+       <string>Dero or Asset Deposit</string>
+      </property>
+      <widget class="QLineEdit" name="depositLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>474</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>474</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>615</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Asset Address:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="depositoButton">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>90</y>
+         <width>84</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>84</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>84</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Deposit</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="depositAmountSpinBox">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>90</y>
+         <width>280</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDoubleSpinBox:hover {
+	background-color: rgba(79, 186, 196, 30);
+}</string>
+       </property>
+       <property name="prefix">
+        <string>Amount: </string>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>1000000000000000043845843045076197354634047651840.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="depositCheckBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>81</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>99</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:hover{
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 158, 0, 120);
+}</string>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="walletDeroDisplay">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>230</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="prefix">
+        <string>Dero in Wallet: </string>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>1000000000000000013287555072.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="walletAssetDisplay">
+       <property name="geometry">
+        <rect>
+         <x>244</x>
+         <y>30</y>
+         <width>240</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="prefix">
+        <string>Assets in Wallet: </string>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>1000000000000000019884624838656.000000000000000</double>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QDoubleSpinBox" name="heightDisplay">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>410</y>
+        <width>150</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="prefix">
+       <string>Height: </string>
+      </property>
+      <property name="decimals">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <double>999999999999999938258300825281978540327027364472124478294416212538871491824599713636820527503908255301632.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="fundsTXID">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>21</y>
+        <width>150</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">    border-color: rgb(128, 128, 128);
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 6px;
+    padding: 3px;
+	background-color: rgb(25, 25, 25);
+    color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="actionsTab">
+     <attribute name="title">
+      <string>Actions</string>
+     </attribute>
+     <widget class="QGroupBox" name="removeGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>500</width>
+        <height>75</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>500</width>
+        <height>75</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>830</width>
+        <height>75</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+	background-color: rgba(0, 0, 0, 120);
+}
+
+QGroupBox::title {
+	color: rgb(255, 255, 255);
+    subcontrol-origin: top;
+    subcontrol-position: top left; 
+    padding: 0 3px;
+    border: 2px solid gray;
+    border-bottom-right-radius: 6px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+      </property>
+      <property name="title">
+       <string>Remove Owner</string>
+      </property>
+      <widget class="QLineEdit" name="removeLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>474</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>474</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>615</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>New Owner Address:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="removeSpinBox">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>10</y>
+         <width>150</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDoubleSpinBox:hover {
+	background-color: rgba(79, 186, 196, 30);
+}</string>
+       </property>
+       <property name="prefix">
+        <string>Remove Owner: </string>
+       </property>
+       <property name="decimals">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="removeButton">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>10</y>
+         <width>84</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>84</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>84</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Remove</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="removeCheckBox">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>10</y>
+         <width>81</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:hover{
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 158, 0, 120);
+}</string>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="addGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>500</width>
+        <height>75</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>830</width>
+        <height>157</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+	background-color: rgba(0, 0, 0, 120);
+}
+
+QGroupBox::title {
+	color: rgb(255, 255, 255);
+    subcontrol-origin: top;
+    subcontrol-position: top left; 
+    padding: 0 3px;
+    border: 2px solid gray;
+    border-bottom-right-radius: 6px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+      </property>
+      <property name="title">
+       <string>Add Owner</string>
+      </property>
+      <widget class="QLineEdit" name="addLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>474</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>474</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>615</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>New Owner Address:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="addSpinBox">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>10</y>
+         <width>150</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDoubleSpinBox:hover {
+	background-color: rgba(79, 186, 196, 30);
+}</string>
+       </property>
+       <property name="prefix">
+        <string>Consensus: </string>
+       </property>
+       <property name="decimals">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="addButton">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>10</y>
+         <width>84</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>84</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>84</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="addCheckBox">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>10</y>
+         <width>81</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:hover{
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 158, 0, 120);
+}</string>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTextBrowser" name="actionsTXID">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>20</y>
+        <width>150</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">    border-color: rgb(128, 128, 128);
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 6px;
+    padding: 3px;
+	background-color: rgb(25, 25, 25);
+    color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="updateTab">
+     <attribute name="title">
+      <string>Update</string>
+     </attribute>
+     <widget class="QGroupBox" name="updateGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>655</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>830</width>
+        <height>999</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+	background-color: rgba(0, 0, 0, 120);
+}
+
+QGroupBox::title {
+	color: rgb(255, 255, 255);
+    subcontrol-origin: top;
+    subcontrol-position: top left; 
+    padding: 0 3px;
+    border: 2px solid gray;
+    border-bottom-right-radius: 6px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+}</string>
+      </property>
+      <property name="title">
+       <string>Update Contract</string>
+      </property>
+      <widget class="QPushButton" name="updateButton">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>380</y>
+         <width>84</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>84</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>84</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Update</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="updateCheckBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>380</y>
+         <width>81</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>99</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QCheckBox{
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:hover{
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 158, 0, 120);
+}</string>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="updateTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>631</width>
+         <height>341</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">    border-color: rgb(128, 128, 128);
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 6px;
+    padding: 3px;
+	background-color: rgb(25, 25, 25);
+    color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;New code:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
